@@ -9,8 +9,8 @@ class Student:
         self.stud_midgrades = sum(self.grades.values)/len(self.grades)
 
     def __str__(self):
-        return f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за домашнее задание: {self.stud_midgrades}\n\\
-              Курсы в процессе изучения: {self.courses_in_progress}\nЗавершенные курсы: {self.finished_courses}'
+        return f'Имя: {self.name}\n' f'Фамилия: {self.surname}\n' f'Средняя оценка за домашнее задание: {self.stud_midgrades()}\n\\
+            'f'Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n' f'Завершенные курсы: {", ".join(self.finished_courses)}'
 
     def __eq__(self, other):
         return self == other
@@ -45,7 +45,7 @@ class Lecturer(Mentor):
         self.lect_midgrades = sum(self.grades.values)/len(self.grades)
 
     def __str__(self):
-        return f'Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {self.lect_midgrades}'
+        return f'Имя: {self.name}\n' f'Фамилия: {self.surname}\n' f'Средняя оценка за лекции: {self.lect_midgrades()}'
     
     def __eq__(self, other):
         return self == other
@@ -68,7 +68,7 @@ class Reviewer(Mentor):
             return 'Ошибка'
         
     def __str__(self):
-        return f'Имя: {self.name} Фамилия: {self.surname}'
+        return f'Имя: {self.name}\n' f'Фамилия: {self.surname}'
     
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
